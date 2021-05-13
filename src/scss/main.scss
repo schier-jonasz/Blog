@@ -3,6 +3,7 @@
 @import "/node_modules/normalize.css/normalize.css";
 
 @import "modules/navigation.scss";
+@import "modules/footer.scss";
 
 html {
     box-sizing: border-box;
@@ -47,5 +48,6 @@ html {
         font-weight: 300;
         color: $gray;
         width: 75%;
+        line-height: 1.5em;
     }
 }
