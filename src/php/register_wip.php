@@ -34,10 +34,6 @@
                         <a href="./login.html" class="buttons__login">zaloguj</a>
                     </div>
                 </form>
-                <div class="links">
-                    <p class="links__register">Nie masz konta? <a href="./register.html" class="links__link">Zarejestruj się.</a></p>
-                    <a href="#" class="links__forget">Zapomniałeś hasła?</p>
-                </div>
             </section>
         </div>
     </main>
