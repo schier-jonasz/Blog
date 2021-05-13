@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import "/node_modules/normalize.css/normalize.css";
+.navigation {
+  padding: 16px;
+  background-color: #1E2A31;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation__link {
+  text-decoration: none;
+  color: #ECEFF0;
+  font-weight: 300;
+  margin-right: 16px;
+  transition: all 0.3s ease;
+}
+.navigation__link:hover {
+  color: #F0F757;
+}
+.navigation__link--logo {
+  color: #F0F757;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: auto;
+}
+.navigation__link--logo:hover {
+  color: #ECEFF0;
+}
+.navigation__link--button {
+  background-color: #F0F757;
+  color: #1E2A31;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-left: 16px;
+}
+.navigation__link--button:hover {
+  color: #1E2A31;
+  background-color: #ECEFF0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.hero {
+  margin: 0;
+  background-color: #1E2A31;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px;
+}
+.hero-container {
+  width: 50%;
+}
+.hero__header {
+  margin: 0;
+  font-size: 4em;
+  color: #ECEFF0;
+  width: 70%;
+}
+.hero__header--special {
+  color: #E54651;
+}
+.hero__description {
+  font-weight: 300;
+  color: #CCCCCC;
+  width: 75%;
+}
+
+/*# sourceMappingURL=main.css.map */

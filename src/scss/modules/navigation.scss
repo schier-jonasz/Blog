@@ -1,0 +1,47 @@
+@import "./../_variables.scss";
+
+.navigation {
+    padding: 16px;
+    background-color: $dark;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    &__link {
+        text-decoration: none;
+        color: $burnt-white;
+        font-weight: 300;
+        margin-right: 16px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $yellow;
+        }
+
+        &--logo {
+            color: $yellow;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-right: auto;
+
+            &:hover {
+                color: $burnt-white;
+            }
+        }
+
+        &--button {
+            background-color: $yellow;
+            color: $dark;
+            padding: 6px 12px;
+            border-radius: 4px;
+            margin-left: 16px;
+
+            &:hover {
+                color: $dark;
+                background-color: $burnt-white;
+            }
+        }
+    }
+}
