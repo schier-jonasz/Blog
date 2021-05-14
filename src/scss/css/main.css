@@ -23,6 +23,7 @@
   text-transform: uppercase;
   font-weight: bold;
   margin-right: auto;
+  font-size: 1.25em;
 }
 .navigation__link--logo:hover {
   color: #ECEFF0;
@@ -139,6 +140,34 @@ html {
   color: #CCCCCC;
   width: 75%;
   line-height: 1.5em;
+}
+
+.latest-posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.latest-posts__header {
+  text-transform: uppercase;
+  margin: 64px 0 0 0;
+}
+.latest-posts__header--posts {
+  color: #4CAAF5;
+}
+.latest-posts__description {
+  width: 60%;
+  text-align: center;
+  color: #1E2A31;
+  font-weight: 300;
+}
+
+.posts {
+  margin-top: 16px;
+  margin-bottom: 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 64px;
 }
 
 /*# sourceMappingURL=main.css.map */

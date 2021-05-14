@@ -51,3 +51,34 @@ html {
         line-height: 1.5em;
     }
 }
+
+.latest-posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__header {
+        text-transform: uppercase;
+        margin: 64px 0 0 0;
+
+        &--posts {
+            color: $blue;
+        }
+    }
+
+    &__description {
+        width: 60%;
+        text-align: center;
+        color: $dark;
+        font-weight: 300;
+    }
+}
+
+.posts {
+    margin-top: 16px;
+    margin-bottom: 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 64px;
+}
