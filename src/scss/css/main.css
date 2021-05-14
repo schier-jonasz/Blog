@@ -217,4 +217,55 @@ html {
   box-shadow: 20px 20px 36px;
 }
 
+.quote {
+  min-height: 400px;
+  background-color: #F0F757;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quote__background {
+  margin: 0;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 16em;
+  text-transform: uppercase;
+  color: #1E2A31;
+  opacity: 0.1;
+}
+.quote__text {
+  font-size: 1.2em;
+  font-weight: 300;
+  position: relative;
+}
+.quote__text::before {
+  content: url(/src/assets/icons/left-quote.svg);
+  position: absolute;
+  bottom: 0;
+  left: -32px;
+  font-size: 8em;
+  opacity: 0.7;
+}
+.quote__text::after {
+  content: url(/src/assets/icons/right-quote.svg);
+  position: absolute;
+  top: -64px;
+  right: -32px;
+  font-size: 8em;
+  opacity: 0.7;
+}
+.quote__box {
+  width: 36px;
+  height: 36px;
+  background-color: #1E2A31;
+  border-radius: 50%;
+  position: relative;
+}
+
 /*# sourceMappingURL=main.css.map */
