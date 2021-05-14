@@ -15,12 +15,13 @@ html {
     box-sizing: inherit;
 }
 
+//content is in main
 .main {
     // margin: 0 64px;
     // height: 100vh;
-    
 }
 
+//hero header
 .hero {
     margin: 0;
     background-color: $dark;
@@ -52,11 +53,13 @@ html {
     }
 }
 
+//lastest posts section
 .latest-posts {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 500px;
 
     &__header {
         text-transform: uppercase;
@@ -81,4 +84,59 @@ html {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 64px;
+}
+
+//information about blog section
+.information {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark;
+    min-height: 600px;
+
+    &__container {
+        width: 35%;
+    }
+
+    &__header {
+        text-transform: uppercase;
+        color: $burnt-white;
+
+        &--blog {
+            color: $yellow;
+        }
+    }
+
+    &__description {
+        color: $burnt-white;
+        font-weight: 300;
+        width: 70%;
+
+        &--bottom {
+            color: $gray;
+            opacity: 0.5;
+            width: 80%;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__button {
+        background-color: $yellow;
+        color: $dark;
+        padding: 6px 12px;
+        border-radius: 4px;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $burnt-white;
+        }
+    }
+
+    &__image {
+        width: 600px;
+        height: 400px;
+        border-radius: 8px;
+        box-shadow: 20px 20px 36px;
+    }
 }
