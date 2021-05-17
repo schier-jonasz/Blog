@@ -15,12 +15,26 @@
         <a href="./posts.html" class="navigation__link">Posty</a>
         <a href="./contact.html" class="navigation__link">Kontakt</a>
         <a href="./faq.html" class="navigation__link">FAQ</a>
-        <a href="./login.html" class="navigation__link navigation__link--button">Zaloguj się</a>
+	<?php
+		if(!isSet($_SESSION['login_success'])){
+		?>
+			<a href="./login.html" class="navigation__link navigation__link--button">Zaloguj się</a>
+	<?php
+		}
+		else{
+		?>
+			<a href="destroy_login.php" class="navigation__link navigation__link--button">Wyloguj się</a>
     </nav>
     <main class="main">
         <section class="login">
 		<?php
-			if(!isSet($_SESSION['login'])){ ?>
+		}
+			if(isSet($_SESSION['login_fail'])){
+				echo "Błędne dane logowania!";
+				DestroyFail();
+			}
+			if(!isSet($_SESSION['login_success'])){
+		?>
             <h2 class="login__header">Zaloguj się</h2>
             <form class="form-login" method = "post" action = "login_main.php">
                 <input type="text" name="email" placeholder="email" Required class="form-login__input">
@@ -35,7 +49,6 @@
 			}
 			else{ ?>
 				<h2 class="login__header">Zalogowano</h2>
-				<button><a href = "destroy_login.php">Wyloguj</button>
 			<?php
 			}
 			?>

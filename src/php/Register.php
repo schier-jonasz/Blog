@@ -11,4 +11,8 @@ function Connect(){
 	return $db;
 }
 
+function DestroyFail(){
+	unset($_SESSION['login_success']);
+	session_destroy();
+}
 ?>
