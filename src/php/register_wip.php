@@ -21,6 +21,16 @@
         <div class="background-container">
             <section class="register">
                 <h2 class="register__header">Stwórz konto</h2>
+				<?php
+					if(isSet($_SESSION['login_exists'])){
+						echo "Podany login jest już w użyciu";
+						DestroyLoginExists();
+					}
+					else if(isSet($_SESSION['email_exists'])){
+						echo "Podany email jest już w użyciu";
+						DestroyEmailExists();
+					}
+				?>
                 <form class="form-register" method = "post", action = "register_complete.php">
                     <input type="text" name="username" placeholder="username" Required class="form-register__input">
                     <input type="text" name="email" placeholder="email" Required class="form-register__input">
@@ -31,9 +41,13 @@
                     </div>
                     <div class="buttons">
                         <button type="submit" class="buttons__register">Zarejestruj</button>
-                        <a href="./login.html" class="buttons__login">zaloguj</a>
+                        <a href="login_wip.php" class="buttons__login">zaloguj</a>
                     </div>
                 </form>
+                <div class="links">
+                    <p class="links__register">Nie masz konta? <a href="./register.html" class="links__link">Zarejestruj się.</a></p>
+                    <a href="#" class="links__forget">Zapomniałeś hasła?</p>
+                </div>
             </section>
         </div>
     </main>
