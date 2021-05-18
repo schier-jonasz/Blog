@@ -1,0 +1,148 @@
+@import "modules/navigation.scss";
+@import "modules/index.scss";
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: $dark;
+}
+
+.background-container {
+    background-image: url("/src/assets/images/register-background.svg");
+    background-position: center;
+    
+    padding: 64px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.16) 0px -3px 6px;
+}
+
+.register {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+    min-width: 600px;
+    background-color: $dark;
+
+    &__header {
+        color: $burnt-white;
+    }
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &__input {
+        margin-bottom: 12px;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 64px;
+        background-color: $input-color;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        outline: none;
+        min-width: 330px;
+
+        &::placeholder {
+            color: #000;
+            opacity: 0.5;
+        }
+    }
+}
+
+.terms {
+    margin: 8px 0 16px 0;
+    display: flex;
+    align-items: center;
+
+    &__label {
+        color: $input-color;
+
+        &--bold {
+            font-weight: bold;
+        }
+    }
+
+    &__checkbox {
+        position: relative;
+        margin-left: 8px;
+        width: 1.5em;
+        height: 1.5em;
+        border: 1px solid $gray;
+        border-radius: 4px;
+        appearance: none;
+        outline: 0;
+        cursor: pointer;
+        transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+
+        &::before {
+            position: absolute;
+            content: '';
+            display: block;
+            top: 2px;
+            left: 7px;
+            width: 8px;
+            height: 14px;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            opacity: 0;
+        }
+
+        &:checked {
+            color: $burnt-white;
+            border-color: $red;
+            background: $red;
+
+            &::before {
+            opacity: 1;
+            }
+        }
+    }
+}
+
+.buttons {
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &__register {
+        border: none;
+        width: 240px;
+        background-color: $yellow;
+        color: $dark;
+        padding: 10px 16px;
+        border-radius: 64px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+    }
+
+    &__login {
+        width: 160px;
+        background-color: $burnt-white;
+        text-align: center;
+        text-decoration: none;
+        color: $dark;
+        padding: 10px 16px;
+        border-radius: 64px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+    }
+}
