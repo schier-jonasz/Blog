@@ -1,0 +1,73 @@
+@import "modules/navigation.scss";
+@import "modules/index.scss";
+@import "modules/footer.scss";
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header {
+    width: 60%;
+    position: relative;
+
+    &__title {
+        font-size: 5em;
+        position: absolute;
+        top: -36px;
+        color: $yellow;
+        left: -16px;
+        opacity: 0.5;
+        z-index: -1;
+        margin: 0;
+    }
+
+    &__question {
+        width: 80%;
+        color: $dark;
+    }
+}
+
+.persons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.person {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        background-position: top center;
+        border-radius: 50%;
+    }
+
+    &__line {
+        height: 72px;
+        width: 1px;
+        background-color: #000;
+        margin: 32px 0;
+    }
+
+    &__name {
+        margin: 0;
+    }
+
+    &__description {
+        text-align: center;
+        margin: 0;
+        font-weight: 100;
+        width: 70%;
+    }
+}
