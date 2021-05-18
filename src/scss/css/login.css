@@ -57,6 +57,8 @@ html {
   align-items: center;
   min-height: 100vh;
   background-color: #1E2A31;
+  background-image: url("/src/assets/images/login-background.svg");
+  background-position: 100%;
 }
 
 .login {
@@ -68,6 +70,7 @@ html {
   padding: 8px 16px;
   border-radius: 4px;
   min-width: 600px;
+  background-color: #1E2A31;
 }
 .login__header {
   color: #ECEFF0;
@@ -100,6 +103,10 @@ html {
   min-width: 300px;
   background-color: #E54651;
   color: #ECEFF0;
+}
+.form-login__button:hover {
+  cursor: pointer;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .links {
