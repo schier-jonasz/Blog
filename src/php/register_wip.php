@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog programistyczny</title>
+    <link href="/src/scss/css/register.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navigation">

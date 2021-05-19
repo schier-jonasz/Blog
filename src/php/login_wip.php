@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog programistyczny</title>
+    <link href="/src/scss/css/login.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navigation">
@@ -18,12 +19,12 @@
 	<?php
 		if(!isSet($_SESSION['login_success'])){
 		?>
-			<a href="./login.html" class="navigation__link navigation__link--button">Zaloguj się</a>
+			<a href="./login.html" class="navigation__link navigation__link--button  navigation__link--login">Zaloguj się</a>
 	<?php
 		}
 		else{
 		?>
-			<a href="destroy_login.php" class="navigation__link navigation__link--button">Wyloguj się</a>
+			<a href="destroy_login.php" class="navigation__link navigation__link--button  navigation__link--logout">Wyloguj się</a>
     </nav>
     <main class="main">
         <section class="login">

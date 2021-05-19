@@ -39,6 +39,12 @@
   color: #1E2A31;
   background-color: #ECEFF0;
 }
+.navigation__link--login {
+  background-color: #F0F757;
+}
+.navigation__link--logout {
+  background-color: #E54651;
+}
 
 .footer {
   background-color: #1E2A31;
