@@ -127,6 +127,9 @@ html {
   min-height: 600px;
   padding: 0 64px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .main::before {
   content: "";
@@ -159,6 +162,7 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
+  width: 80%;
 }
 
 .header {
@@ -190,11 +194,6 @@ html {
 .form-box {
   position: relative;
 }
-.form-box:focus-within label {
-  color: #C58FEE;
-  top: -20px;
-  font-size: 0.8em;
-}
 .form__label {
   position: absolute;
   top: 0;
@@ -216,6 +215,11 @@ html {
 .form__input:focus {
   border-bottom: 1px solid #C58FEE;
   outline: none;
+}
+.form__input:focus ~ label, .form__input:valid ~ label {
+  color: #C58FEE;
+  top: -20px;
+  font-size: 0.8em;
 }
 .form__textarea {
   resize: none;
