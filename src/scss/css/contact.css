@@ -160,6 +160,8 @@ html {
 
 .container {
   display: grid;
+  justify-content: center;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
   width: 80%;
@@ -181,7 +183,7 @@ html {
 .header__description {
   text-transform: uppercase;
   font-size: 1.5em;
-  width: 50%;
+  width: 60%;
   font-weight: bold;
 }
 
@@ -190,6 +192,10 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 60%;
+  background-color: #fff;
 }
 .form-box {
   position: relative;
@@ -203,6 +209,14 @@ html {
   z-index: 1;
   transition: all 0.3s ease;
 }
+.form__label::after {
+  content: "*";
+  position: absolute;
+  top: 8px;
+  color: #E54651;
+  margin-left: 2px;
+  font-size: 0.8em;
+}
 .form__input {
   margin-bottom: 32px;
   padding: 8px 0;
@@ -211,6 +225,11 @@ html {
   border-bottom: 1px solid #C58FEE3d;
   position: relative;
   transition: all 0.3s ease;
+}
+.form__input:required ~ label {
+  top: 0;
+  font-size: 1em;
+  color: #1E2A31;
 }
 .form__input:focus {
   border-bottom: 1px solid #C58FEE;
@@ -240,6 +259,15 @@ html {
 }
 .form__button:active {
   opacity: 0.7;
+}
+.form::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  top: 0;
+  background-color: #C58FEE;
 }
 
 /*# sourceMappingURL=contact.css.map */

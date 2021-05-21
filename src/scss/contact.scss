@@ -41,6 +41,8 @@
 
 .container {
     display: grid;
+    justify-content: center;
+    align-items: center;
     grid-template-columns: 1fr 1fr;
     min-height: 100vh;
     width: 80%;
@@ -64,7 +66,7 @@
     &__description {
         text-transform: uppercase;
         font-size: 1.5em;
-        width: 50%;
+        width: 60%;
         font-weight: bold;
     }
 }
@@ -75,6 +77,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 60%;
 
     &-box {
         position: relative;
@@ -88,6 +93,15 @@
         color: $dark;
         z-index: 1;
         transition: all 0.3s ease;
+
+        &::after {
+            content: "*";
+            position: absolute;
+            top: 8px;
+            color: $red;
+            margin-left: 2px;
+            font-size: 0.8em;
+        }
     }
 
     &__input {
@@ -99,18 +113,28 @@
         position: relative;
         transition: all 0.3s ease;
 
+        &:required ~ label {
+            top: 0;
+            font-size: 1em;
+            color: $dark;
+        }
+
+        // &:invalid ~ label {
+        //     color: $red;
+        //     top: -20px;
+        //     font-size: 0.8em;
+        // }
+
         &:focus {
             border-bottom: 1px solid $purple;
             outline: none;
         }
 
         &:focus ~ label, &:valid ~ label {
-            
-                color: $purple;
-                top: -20px;
-                font-size: 0.8em;
+            color: $purple;
+            top: -20px;
+            font-size: 0.8em;
         }
-
     }
 
     &__textarea {
@@ -136,4 +160,16 @@
             opacity: 0.7;
         }
     }
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        top: 0;
+        background-color: $purple;
+    }
+
+    background-color: #fff;
 }
