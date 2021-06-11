@@ -1,0 +1,111 @@
+@import "modules/navigation.scss";
+@import "modules/index.scss";
+@import "modules/footer.scss";
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    
+    &::before {    
+        content: "";
+        background-image: url('/src/assets/images/faq-background.svg');
+        background-position: left;
+        // background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.05;
+        z-index: -1;
+    }
+}
+
+.header {
+    width: 90%;
+    margin: 64px 0;
+    position: relative;
+
+    &__title {
+        font-size: 6em;
+        position: absolute;
+        top: 42px;
+        right: 40%;
+        color: $blue;
+        opacity: 0.3;
+        z-index: -1;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    &__question {
+        width: 45%;
+        font-size: 2em;
+        color: $dark;
+    }
+}
+
+// section questions
+.questions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 64px 32px 64px;
+    width: 70%;
+}
+
+//article question inside questions
+.question {
+    width: 100%;
+    margin: 8px 0;
+    border-bottom: 1px solid $dark;
+
+    &__title {
+        font-weight: 400;
+        // margin: 0 0 16px 0;
+    }
+    
+    &-box {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &-button {
+        width: 32px;
+        height: 32px;
+        border: 1px solid $blue;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__icon {
+            width: 30%;
+        }
+    }
+
+    &-container {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+
+        &__text {
+            margin: 0 0 16px 0;
+            color: $brighter-dark;
+            font-weight: 300;
+        }
+
+        &--open {
+            max-height: 1000px;
+            transition: max-height 1s ease;
+        }
+    }
+}

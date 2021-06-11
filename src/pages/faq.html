@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog programistyczny</title>
+    <link href="/src/scss/css/faq.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navigation">
@@ -17,29 +18,39 @@
     </nav>
     <main class="main">
         <header class="header">
-            <h1 class="header__title">pytania</h1>
+            <h1 class="header__title">pytania...</h1>
             <h2 class="header__question">Masz jakieś pytania? Sprawdź czy ktoś zadał je wcześniej.</h2>
         </header>
         <section class="questions">
+
             <article class="question">
-                <h3 class="question__title">Ile lat programujecie?</h3>
-                <span class="question-button"><img src="/src/assets/icons/plus.svg" class="question-button__icon"></span>
+                <div class="question-box">
+                    <h3 class="question__title">Ile lat programujecie?</h3>
+                    <span class="question-button"><img src="/src/assets/icons/plus.svg" class="question-button__icon"></span>
+                </div>
                 <div class="question-container">
-                    <p class="question-container__text">Jest to zależne od osoby. Jedni są po technikum informatycznym, drudzy nie. Ale wszyscy pierwsze poważniejsze starcia programistyczne rozpoczeliśmy na studiach.</p>
+                    <p class="question-container__text">Jest to zależne od osoby. Jedni są po technikum informatycznym, drudzy nie. Ale wszyscy pierwsze poważniejsze starcia programistyczne rozpoczeliśmy na studiach.
+                    </p>
                 </div>
             </article>
 
             <article class="question">
-                <h3 class="question__title">Czy podobają się wam studia?</h3>
-                <span class="question-button"><img src="/src/assets/icons/plus.svg" class="question-button__icon"></span>
+                <div class="question-box">
+                    <h3 class="question__title">Czy podobają się wam studia?</h3>
+                    <span class="question-button"><img src="/src/assets/icons/plus.svg" class="question-button__icon"></span>
+                </div>
                 <div class="question-container">
-                    <p class="question-container__text">Tak. Polecamy Uniwersytet Śląski.</p>
+                    <p class="question-container__text">
+                        Powinieneś pytać każdego z osobna. Bo chyba każdy udzieli innej odpowiedzi. Ale aby nie podpaść...
+                        <br>Tak. Polecamy Uniwersytet Śląski.</p>
                 </div>
             </article>
 
             <article class="question">
-                <h3 class="question__title">Skąd się znacie?</h3>
-                <span class="question-button"><img src="/src/assets/icons/plus.svg" class="question-button__icon"></span>
+                <div class="question-box">
+                    <h3 class="question__title">Skąd się znacie?</h3>
+                    <span class="question-button"><img src="/src/assets/icons/plus.svg" class="question-button__icon"></span>
+                </div>
                 <div class="question-container">
                     <p class="question-container__text">Grupa 2 na studiach jest liczniejsza i wygra wszystkie głosowania.</p>
                 </div>
@@ -67,5 +78,6 @@
         </div>
         <p class="footer__privacy">&copy; 2020 — 2022 Privacy — Terms</p>
     </footer>
+    <script src="/src/js/faq.js"></script>
 </body>
 </html>
