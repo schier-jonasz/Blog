@@ -2,3 +2,180 @@
 @import "modules/index.scss";
 @import "modules/footer.scss";
 
+.main {
+    background-color: $dark;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+
+    &__header {
+        margin: 0;
+        text-transform: uppercase;
+        color: $red;
+        font-size: 5em;
+    }
+
+    &::before {
+        content: "";
+        background-image: url("/src/assets/images/backgrounds/posts-background.svg");
+        background-size: cover;
+        position: absolute;
+        top: -32px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.1;
+    }
+}
+
+.content {
+    width: 1000px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 32px 0 64px 0;
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    &__image {
+        width: 50%;
+        border-radius: 16px;
+        // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        opacity: 0.8;
+        transition: 0.3s ease;
+    }
+
+    &:hover &__image, &:hover .hero-post__title, &:hover .hero-post__description {
+        opacity: 1;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    &:hover &__image {
+        cursor: default;
+    }
+
+}
+
+.hero-post {
+    
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-evenly;
+    justify-content: center;
+    margin-left: 64px;
+
+    &__date {
+        color: $date;
+        font-size: 0.8em;
+        font-weight: 300;
+    }
+
+    &__title {
+        color: $red;
+        opacity: 0.8;
+        width: 50%;
+        transition: 0.3s ease;
+    }
+
+    &__description {
+        width: 45%;
+        opacity: 0.8;
+        transition: 0.3s ease;
+    }
+
+    // &:hover > &__title {
+    //     opacity: 1;
+    // }
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+    width: 100%;
+    margin-bottom: 64px;
+
+    &:nth-child(3n - 1) .post__title {
+        color: $blue;
+    }
+
+    &:nth-child(3n - 3) .post__title {
+        color: $yellow;
+    }
+
+    &:nth-child(3n - 2) .post__title {
+        color: $red;
+    }
+}
+
+.post {
+    width: 260px;
+    height: 360px;
+    transition: all 0.3s ease;
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__image {
+        height: 200px;
+        width: 260px;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        opacity: 0.8;
+        transition: 0.3s ease;
+        
+    }
+
+    &__date {
+        font-size: 0.8em;
+        color: $date;
+        font-weight: 300;
+    }
+
+    &__title {
+        opacity: 0.8;
+        transition: 0.3s ease;
+    }
+
+    &__description {
+        font-size: 0.8em;
+        height: 70px;
+        opacity: 0.8;
+        transition: 0.3s ease;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        cursor: pointer;
+    }
+
+    &:hover &__title,  &:hover &__image, &:hover &__description {
+        opacity: 1;
+        transition: 0.3s ease;
+    }
+}
