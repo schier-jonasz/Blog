@@ -133,7 +133,7 @@ html {
 }
 .main::before {
   content: "";
-  background-image: url("/src/assets/images/contact-background.svg");
+  background-image: url("/src/assets/images/backgrounds/contact-background.svg");
   background-size: cover;
   position: absolute;
   top: -64px;
@@ -146,7 +146,7 @@ html {
 }
 .main::after {
   content: "";
-  background-image: url("/src/assets/images/contact-background.svg");
+  background-image: url("/src/assets/images/backgrounds/contact-background.svg");
   background-size: cover;
   position: absolute;
   top: -64px;
