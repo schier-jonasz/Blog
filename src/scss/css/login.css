@@ -39,6 +39,13 @@
   color: #1E2A31;
   background-color: #ECEFF0;
 }
+.navigation__link--login {
+  background-color: #F0F757;
+}
+.navigation__link--logout {
+  background-color: #E54651;
+  color: #ECEFF0;
+}
 
 html {
   box-sizing: border-box;
@@ -55,7 +62,7 @@ html {
   align-items: center;
   min-height: 100vh;
   background-color: #1E2A31;
-  background-image: url("/src/assets/images/login-background.svg");
+  background-image: url("/src/assets/images/backgrounds/login-background.svg");
   background-position: 100%;
 }
 

@@ -56,7 +56,9 @@
     }
 
     &__image {
-        width: 50%;
+        width: 700px;
+        height: 400px;
+        object-fit: cover;
         border-radius: 16px;
         // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -119,13 +121,15 @@
         color: $blue;
     }
 
+    &:nth-child(3n - 2) .post__title {
+        color: $red;
+    }
+
     &:nth-child(3n - 3) .post__title {
         color: $yellow;
     }
 
-    &:nth-child(3n - 2) .post__title {
-        color: $red;
-    }
+    
 }
 
 .post {

@@ -173,7 +173,9 @@ html {
   display: block;
 }
 .hero-container__image {
-  width: 50%;
+  width: 700px;
+  height: 400px;
+  object-fit: cover;
   border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   opacity: 0.8;
@@ -195,7 +197,7 @@ html {
   margin-left: 64px;
 }
 .hero-post__date {
-  color: #CCCCCC;
+  color: #7D8386;
   font-size: 0.8em;
   font-weight: 300;
 }
@@ -221,11 +223,11 @@ html {
 .posts:nth-child(3n-1) .post__title {
   color: #4CAAF5;
 }
-.posts:nth-child(3n-3) .post__title {
-  color: #F0F757;
-}
 .posts:nth-child(3n-2) .post__title {
   color: #E54651;
+}
+.posts:nth-child(3n-3) .post__title {
+  color: #F0F757;
 }
 
 .post {
@@ -248,7 +250,7 @@ html {
 }
 .post__date {
   font-size: 0.8em;
-  color: #CCCCCC;
+  color: #7D8386;
   font-weight: 300;
 }
 .post__title {

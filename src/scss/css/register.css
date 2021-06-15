@@ -39,6 +39,13 @@
   color: #1E2A31;
   background-color: #ECEFF0;
 }
+.navigation__link--login {
+  background-color: #F0F757;
+}
+.navigation__link--logout {
+  background-color: #E54651;
+  color: #ECEFF0;
+}
 
 html {
   box-sizing: border-box;
@@ -58,7 +65,7 @@ html {
 }
 
 .background-container {
-  background-image: url("/src/assets/images/register-background.svg");
+  background-image: url("/src/assets/images/backgrounds/register-background.svg");
   background-position: center;
   padding: 64px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.16) 0px -3px 6px;
