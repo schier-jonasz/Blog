@@ -7,29 +7,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog programistyczny</title>
-    <link href="/src/scss/css/login.css" rel="stylesheet">
+    <link href="../scss/css/login.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navigation">
-        <a href="./main.html" class="navigation__link navigation__link--logo">Blog</a>
-        <a href="./about.html" class="navigation__link">O nas</a>
-        <a href="./posts.html" class="navigation__link">Posty</a>
-        <a href="./contact.html" class="navigation__link">Kontakt</a>
-        <a href="./faq.html" class="navigation__link">FAQ</a>
+        <a href="./main.php" class="navigation__link navigation__link--logo">Blog</a>
+	<?php
+	if(isSet($_SESSION['login_success']) && $_SESSION['username'] == 'admin'){ ?>
+		<a href="./backendScripts/CreatePost.php" class="navigation__link">Dodaj post</a>
+	<?php } ?>
+        <a href="./about.php" class="navigation__link">O nas</a>
+        <a href="./posts.php" class="navigation__link">Posty</a>
+        <a href="./contact.php" class="navigation__link">Kontakt</a>
+        <a href="./faq.php" class="navigation__link">FAQ</a>
 	<?php
 		if(!isSet($_SESSION['login_success'])){
 		?>
-			<a href="./login.html" class="navigation__link navigation__link--button  navigation__link--login">Zaloguj się</a>
+			<a href="./Login.php" class="navigation__link navigation__link--button  navigation__link--login">Zaloguj się</a>
 	<?php
 		}
 		else{
 		?>
 			<a href="destroy_login.php" class="navigation__link navigation__link--button  navigation__link--logout">Wyloguj się</a>
+		<?php } ?>
     </nav>
     <main class="main">
         <section class="login">
 		<?php
-		}
 			if(isSet($_SESSION['login_fail'])){
 				echo "Błędne dane logowania!";
 				DestroyFail();
@@ -43,13 +47,13 @@
                 <button type="submit" class="form-login__button">zaloguj</button>
             </form>
             <div class="links">
-                <p class="links__register">Nie masz konta? <a href="register_wip.php" class="links__link">Zarejestruj się.</a></p>
+                <p class="links__register">Nie masz konta? <a href="Registration.php" class="links__register links__register--bold">Zarejestruj się.</a></p>
                 <a href="#" class="links__forget">Zapomniałeś hasła?</p>
             </div>
 		<?php
 			}
 			else{ ?>
-				<h2 class="login__header">Zalogowano</h2>
+				<h2 class="login__header">Witaj <?php echo $_SESSION['username']; ?></h2>
 			<?php
 			}
 			?>
