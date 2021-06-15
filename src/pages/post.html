@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog programistyczny</title>
+    <link href="/src/scss/css/post.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation">
+        <a href="./main.html" class="navigation__link navigation__link--logo">Blog</a>
+        <a href="./about.html" class="navigation__link">O nas</a>
+        <a href="./posts.html" class="navigation__link">Posty</a>
+        <a href="./contact.html" class="navigation__link">Kontakt</a>
+        <a href="./faq.html" class="navigation__link">FAQ</a>
+        <a href="./login.html" class="navigation__link navigation__link--button">Zaloguj się</a>
+    </nav>
+    <main class="main">
+        <section class="content">
+            <img src="/src/assets/images/test5.jpg" class="content__image">
+            <div class="date">
+                <img src="/src/assets/icons/clock.svg" class="date__icon">
+                <p class="date__released">Czerwiec 24, 2021</p>
+            </div>
+            <h1 class="content__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+            
+            <p class="content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin varius nunc auctor suscipit. Sed vitae nibh quis arcu suscipit tincidunt. Sed convallis ornare ligula a ornare. Morbi arcu turpis, auctor vel varius et, pharetra a diam. Curabitur vitae consectetur leo, ultrices gravida nisi. Aenean gravida lectus vel felis posuere luctus. Phasellus ut ex quis purus vestibulum tincidunt cursus eget metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis sit amet nunc vel tortor accumsan hendrerit. Phasellus mauris justo, sodales eget maximus ac, ultricies vitae dolor.</p>
+            <p class="content__text">Nullam varius venenatis eros, sed fermentum tellus feugiat ut. Proin augue ante, porta sit amet suscipit sit amet, tristique et nunc. Proin sollicitudin mi urna, et pretium risus dictum sit amet. Nullam laoreet mattis interdum. Etiam laoreet elit pulvinar consequat eleifend. Cras porttitor sollicitudin dignissim. Sed malesuada ultricies ex, vitae tempus sem pellentesque sit amet. Ut id congue ipsum, vel sagittis erat. Maecenas ac risus elit. Morbi facilisis libero sit amet eros dictum porta eu et tellus. Curabitur bibendum magna nec odio ullamcorper, ut sodales diam fringilla.</p>
+            
+            <h2 class="content__subtitle">Donec sodales leo id iaculis auctor</h2>
+            <p class="content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin varius nunc auctor suscipit. Sed vitae nibh quis arcu suscipit tincidunt. Sed convallis ornare ligula a ornare. Morbi arcu turpis, auctor vel varius et, pharetra a diam. Curabitur vitae consectetur leo, ultrices gravida nisi. Aenean gravida lectus vel felis posuere luctus. Phasellus ut ex quis purus vestibulum tincidunt cursus eget metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis sit amet nunc vel tortor accumsan hendrerit. Phasellus mauris justo, sodales eget maximus ac, ultricies vitae dolor.</p>
+            <img src="/src/assets/images/test4.jpg" class="content__subimage">
+
+            <h2 class="content__subtitle">Consectetur adipiscing elit</h2>
+            <p class="content__text">Nullam varius venenatis eros, sed fermentum tellus feugiat ut. Proin augue ante, porta sit amet suscipit sit amet, tristique et nunc. Proin sollicitudin mi urna, et pretium risus dictum sit amet. Nullam laoreet mattis interdum. Etiam laoreet elit pulvinar consequat eleifend. Cras porttitor sollicitudin dignissim. Sed malesuada ultricies ex, vitae tempus sem pellentesque sit amet. Ut id congue ipsum, vel sagittis erat. Maecenas ac risus elit.</p>
+
+           
+        </section>
+        <section class="comments">
+            <div class="box">
+                <h3 class="box__information">komentarze</h3>
+            </div>
+            <article class="comment">
+                <img src="/src/assets/icons/user.svg" class="comment__image">
+                <div class="information">
+                    <p class="information__nickname">Nick</p>
+                    <p class="information__date">Czerwiec 07</p>
+                    <p class="information__time">12:59</p>
+                </div>
+                <p class="comment__text">Quisque imperdiet dui ac ipsum posuere finibus. Pellentesque sit amet faucibus libero. Donec iaculis metus eu dolor volutpat, et varius dolor gravida. Vivamus tempus turpis elementum faucibus fringilla. Pellentesque egestas ipsum elit, sed tristique felis eleifend quis.</p>
+            </article>
+
+            <article class="comment">
+                <img src="/src/assets/icons/user.svg" class="comment__image">
+                <div class="information">
+                    <p class="information__nickname">Nick</p>
+                    <p class="information__date">Czerwiec 07</p>
+                    <p class="information__time">12:59</p>
+                </div>
+                <p class="comment__text">Ut lorem elit, mattis eget nisi a, iaculis scelerisque odio. Nulla magna justo, auctor quis purus fringilla, consequat dictum massa. Phasellus eleifend justo et ante fermentum facilisis.</p>
+            </article>
+
+            <form class="message" method="POST">
+                <img src="/src/assets/icons/user.svg" class="message__image">
+                <textarea class="message__text" contenteditable="true" placeholder="Napisz co chcesz..."></textarea>
+                <button type="submit" class="message__button"><img src="/src/assets/icons/send.svg" class="message__icon"></button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <h2 class="footer__header">Blog</h2>
+        <div class="social-media">
+            <a target="_blank" rel="noopener noreferrer" href="https://facebook.com" class="footer__link footer__link--facebook">
+                <img src="/src/assets/icons/facebook.svg" class="footer__image footer__image--facebook">
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://youtube.com" class="footer__link footer__link--youtube">
+                <img src="/src/assets/icons/youtube.svg" class="footer__image footer__image--youtube">
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://snapchat.com" class="footer__link footer__link--snapchat">
+                <img src="/src/assets/icons/snapchat.svg" class="footer__image footer__image--snapchat">
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com" class="footer__link footer__link--linkedin">
+                <img src="/src/assets/icons/linkedin.svg" class="footer__image footer__image--linkedin">
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://instagram.com" class="footer__link footer__link--instagram">
+                <img src="/src/assets/icons/instagram.svg" class="footer__image footer__image--instagram">
+            </a>
+        </div>
+        <p class="footer__privacy">&copy; 2020 — 2022 Privacy — Terms</p>
+    </footer>
+    <script src="/src/js/disable_button.js"></script>
+</body>
+</html>
