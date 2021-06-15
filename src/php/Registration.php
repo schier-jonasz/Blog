@@ -7,16 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog programistyczny</title>
-    <link href="/src/scss/css/register.css" rel="stylesheet">
+    <link href="../scss/css/register.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navigation">
-        <a href="./main.html" class="navigation__link navigation__link--logo">Blog</a>
-        <a href="./about.html" class="navigation__link">O nas</a>
-        <a href="./posts.html" class="navigation__link">Posty</a>
-        <a href="./contact.html" class="navigation__link">Kontakt</a>
-        <a href="./faq.html" class="navigation__link">FAQ</a>
-        <a href="./login.html" class="navigation__link navigation__link--button">Zaloguj się</a>
+        <a href="./main.php" class="navigation__link navigation__link--logo">Blog</a>
+        <a href="./about.php" class="navigation__link">O nas</a>
+        <a href="./posts.php" class="navigation__link">Posty</a>
+        <a href="./contact.php" class="navigation__link">Kontakt</a>
+        <a href="./faq.php" class="navigation__link">FAQ</a>
+	<?php
+		if(!isSet($_SESSION['login_success'])){
+		?>
+			<a href="./Login.php" class="navigation__link navigation__link--button  navigation__link--login">Zaloguj się</a>
+	<?php
+		}
+		else{
+		?>
+			<a href="destroy_login.php" class="navigation__link navigation__link--button  navigation__link--logout">Wyloguj się</a>
+		<?php } ?>
     </nav>
     <main class="main">
         <div class="background-container">
@@ -37,18 +46,14 @@
                     <input type="text" name="email" placeholder="email" Required class="form-register__input">
                     <input type="password" name="password" placeholder="password" Required class="form-register__input">
                     <div class="terms">
-                        <label class="terms__label">Zgadzam się z <span>warunkami</span> i <span>polityką prywatności</span>.</label>
+                        <label class="terms__label">Zgadzam się z <span class="terms__label--bold">warunkami</span> i <span class="terms__label--bold">polityką prywatności</span>.</label>
                         <input type="checkbox" Required class="terms__checkbox">
                     </div>
                     <div class="buttons">
-                        <button type="submit" class="buttons__register">Zarejestruj</button>
-                        <a href="login_wip.php" class="buttons__login">zaloguj</a>
+                        <button type="submit" class="buttons__register">zarejestruj</button>
+                        <a href="Login.php" class="buttons__login">zaloguj</a>
                     </div>
                 </form>
-                <div class="links">
-                    <p class="links__register">Nie masz konta? <a href="./register.html" class="links__link">Zarejestruj się.</a></p>
-                    <a href="#" class="links__forget">Zapomniałeś hasła?</p>
-                </div>
             </section>
         </div>
     </main>

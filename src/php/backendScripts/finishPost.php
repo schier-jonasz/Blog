@@ -14,7 +14,7 @@
 	unlink('NewPost.txt');
 	if(isSet($_SESSION['title_set'])){
 		unset($_SESSION['title_set']);
-		session_destroy();
+		unset($_SESSION['image_set']);
 	}
-	header("Location: ReadPosts.php");
+	header("Location: ../posts.php");
 ?>
