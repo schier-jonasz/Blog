@@ -1,6 +1,6 @@
 <?php
 	function PostReader($postNumber, $readFile){
-		$i = 1;
+		$i = 0;
 		$showImage = false;
 		$showDate = false;
 		$showTitle = false;
@@ -14,19 +14,20 @@
 				$showImage = false;
 			}
 			if($showImage && $line != "imagestarter.\n"){
-				echo "<img src = 'zdjecia/", $line,"'>";
-				echo "<br />";
+				echo "<img src = '../assets/images/", $line,"' class='content__image'>";
 			}
 			if($line == "datestarter.\n" && $i == $postNumber){
 				$showDate = true;
+				echo '<div class="date">';
+				echo '<img src="../assets/icons/clock.svg" class="date__icon">';
 			}
 			if($line == "datestoper.\n"){
 				$showDate = false;
 			}
 			if($showDate && $line != "datestarter.\n"){
 				$words = preg_split('/[\s]+/', $line, -1, PREG_SPLIT_NO_EMPTY);
-				echo "<font color = 'green'>" , PolishMonth($words[0]), " ", $words[1], "<br />";
-				echo "</font><br />";
+				echo '<p class="date__released">' , PolishMonth($words[0]), " ", $words[1],", ", $words[2], '</p>';
+				echo '</div>';
 			}
 			if($line == "titlestarter.\n" && $i == $postNumber){
 				$showTitle = true;
@@ -35,8 +36,7 @@
 				$showTitle = false;
 			}
 			if($showTitle && $line != "titlestarter.\n"){
-				echo "<font color = 'blue'>" ,$line, "<br />";
-				echo "</font>";
+				echo "<h1 class='content__title'>" ,$line, "</h1>";
 				$saveTitle = $line;
 			}
 			if($line == "subtitlestarter.\n" && $i == $postNumber){
@@ -46,8 +46,7 @@
 				$showSubtitle = false;
 			}
 			if($showSubtitle && $line != "subtitlestarter.\n"){
-				echo "<font color = 'red'>" ,$line, "<br />";
-				echo "</font>";
+				echo "<h2 class='content__subtitle'>" ,$line, "</h2>";
 			}
 			if($line == "textstarter.\n" && $i == $postNumber){
 				$showText = true;
@@ -56,7 +55,7 @@
 				$showText = false;
 			}
 			if($showText && $line != "textstarter.\n"){
-				echo $line, "<br />";
+				echo "<p class='content__text'>" , $line, "</p>";
 			}
 			if($line == "ender.\n"){
 				$i++;
@@ -122,7 +121,7 @@
 				}
 				if($line == "imagestarter.\n"){
 					echo "<article class = 'post'>";
-					echo '<a rel="noopener noreferrer" href="#" class="post__link">';
+					echo '<a rel="noopener noreferrer" href="post.php?id=',$i,'" class="post__link">';
 					$showImage = true;
 				}
 				if($line == "imagestoper.\n"){
@@ -204,7 +203,7 @@
 			}
 			if($showImage && $line != "imagestarter.\n"){
 				echo "<img src = '../assets/images/", $line,"' class='hero-container__image'>";
-				echo '<a rel="noopener noreferrer" href="#" class="hero-container__link">';
+				echo '<a rel="noopener noreferrer" href="post.php?id=',$i,'"class="hero-container__link">';
 			}
 			if($line == "datestarter.\n"){
 				$showDate = true;
@@ -260,52 +259,93 @@
 		$showUsername = false;
 		$showData = false;
 		$showComment = false;
+		$showUserImage = true;
 		$i = 0;
 		while(($line = fgets($readComments)) !== false){
+			if($showUserImage){
+				echo '<article class="comment">';
+				echo '<img src="../assets/icons/user.svg" class="comment__image">';
+				$showUserImage = false;
+			}
 			if($line == "usernamestart.\n"){
+				echo '<div class="information">';
 				$showUsername = true;
 			}
 			if($line == "usernamestop.\n"){
 				$showUsername = false;
 			}
 			if($line != "usernamestart.\n" && $showUsername){
-				echo "Użytkownik: <font color = 'red'>";
-				echo $line;
-				echo "</font>";
-				if(isSet($_SESSION['usernick'])){
+				echo '<p class="information__nickname">', $line, '</p>';
+				if(isSet($_SESSION['username'])){
 					$line = str_replace(array("\n", "\r"), '', $line);
 					//preg_replace('/\s+/', '', $line);
-					if($line === $_SESSION['usernick']){
-						echo "<form action = 'RemoveComment.php' method = 'post'>";
+					if($line == $_SESSION['username']){
+						echo "<form action = 'backendScripts/RemoveComment.php' method = 'post'>";
 						echo "<input type = 'submit' value = 'X' name = ",$i," >";
 						echo "</form>";
 						$i++;
 					}
 				}
-				echo "dodał komentarz o godzinie: ";
 			}
 			if($line == "datastart.\n"){
 				$showData = true;
 			}
 			if($line == "datastop.\n"){
 				$showData = false;
+				echo '</div>';
 			}
 			if($line != "datastart.\n" && $showData){
-				echo "<font color = 'blue'>";
-				echo $line;
-				echo "</font><br />";
+				$words = preg_split('/[\s]+/', $line, -1, PREG_SPLIT_NO_EMPTY);
+				echo '<p class="information__date">', PolishMonth($words[0]), " ",$words[1], " ",$words[2], '</p>';
+				echo '<p class="information__time">', $words[3], '</p>';
 			}
 			if($line == "commentstart.\n"){
 				$showComment = true;
 			}
 			if($line == "commentstop.\n"){
 				$showComment = false;
+				$showUserImage = true;
+				echo '</article>';
 			}
 			if($line != "commentstart.\n" && $showComment){
-				echo $line;
-				echo "<br /><br />";
+				echo '<p class="comment__text">', $line, '</p>';
 			}
 		}
 		fclose($readComments);
+	}
+	
+	function ShowRecentPosts($readTitle){
+		$showTitle = false;
+		$showDate = false;
+		$i = 0;
+		while(($line = fgets($readTitle)) !== false && $i < 3){
+			if($line == "datestarter.\n"){
+				$showDate = true;
+				echo '<article class="post">';
+				echo '<div class="post-overhead">';
+			}
+			if($line == "datestoper.\n"){
+				$showDate = false;
+				echo '</div>';
+			}
+			if($showDate && $line != "datestarter.\n"){
+				$words = preg_split('/[\s]+/', $line, -1, PREG_SPLIT_NO_EMPTY);
+				echo '<p class="post-overhead__date">' , PolishMonth($words[0]), " ", $words[1],", ", $words[2], '</p>';
+			}
+			if($line == "titlestarter.\n"){
+				$showTitle = true;
+				echo '<div class="post-bottom">';
+			}
+			if($line == "titlestoper.\n"){
+				$showTitle = false;
+			}
+			if($showTitle && $line != "titlestarter.\n"){
+				echo '<h3 class="post-bottom__title">', $line, '</h3>';
+				echo '<a href="post.php?id=',$i,'" class="post-bottom__link">Czytaj więcej></a>';
+				echo '</div>';
+				echo '</article>';
+				$i++;
+			}
+		}
 	}
 ?>

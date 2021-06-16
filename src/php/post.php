@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog programistyczny</title>
-    <link href="../scss/css/main.css" rel="stylesheet">
+    <link href="../scss/css/post.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navigation">
@@ -29,38 +29,45 @@
 		<?php } ?>
     </nav>
     <main class="main">
-        <header class="hero">
-            <div class="hero-container">
-                <h1 class="hero__header">Witaj na&nbsp;naszym <span class="hero__header--special">blogu</span>!&nbsp;</h1>
-                <p class="hero__description">Chcemy się podzielić z wami doświadczeniem oraz wiedzą, którą poznajemy na codzień. Na pewno znajdziesz coś dla siebie!</p>
+        <section class="content">
+		<?php
+		if($_GET['id'] != ""){
+			$_SESSION['save_id'] = $_GET['id'];
+			$postNumber = $_GET['id'];
+		}
+		else{
+			$postNumber = $_SESSION['save_id'];
+		}
+			$postFile = fopen("backendScripts/posty.txt", 'r');
+			$savePostTitle = PostReader($postNumber, $postFile);
+			$_SESSION['save_title'] = $savePostTitle;
+			fclose($postFile);
+        ?>
+        </section>
+        <section class="comments">
+            <div class="box">
+                <h3 class="box__information">komentarze</h3>
             </div>
-            <img src="../assets/images/computer.png" class="hero__image">
-        </header>
-        <section class="latest-posts">
-            <h2 class="latest-posts__header">Ostatnie <span class="latest-posts__header--posts">posty</span></h2>
-            <p class="latest-posts__description">"Pod pewnymi względami programowanie jest jak malowanie. Zaczynasz z pustym płótnem i pewnymi podstawowymi surowcami. Używasz kombinacji nauki, sztuki i rzemiosła, aby określić, co z nimi zrobić. " - Andrew Hunt</p>
-            <div class="posts">
 			<?php
-				$getTitles = fopen("backendScripts/posty.txt", "r");
-				ShowRecentPosts($getTitles);
-				fclose($getTitles);
+				$path = "comments/";
+				$path .= $savePostTitle;
+				$path = trim($path);
+				$path .= ".txt";
+				if(file_exists($path)){
+					ReadComments($path);
+				}
+				else{
+					echo "Ten post nie ma jeszcze żadnych komentarzy<br/>";
+				}
 			?>
-            </div>
-        </section>
-        <section class="information">
-            <div class="information__container">
-                <h2 class="information__header">Ogólnie o <span class="information__header--blog">blogu</span></h2>
-                <p class="information__description">Blog jest projektem realizowanym w ramach zajęć programowania zespołowego.</p>
-                <p class="information__description--bottom">Serdeczne pozdrowienia dla szanownego prowadzącego zajęcia dr. Bartosza Dziewita.</p>
-                <a href="#" class="information__button">Czytaj więcej</a>
-            </div>
-            <img src="../assets/images/about-image.jpg" class="information__image">
-        </section>
-        <section class="quote">
-            <h2 class="quote__background">quote</h2>
-            <p class="quote__text">Czasami lepiej jest zostawić coś w spokoju, wstrzymać się, i to jest bardzo prawdziwe w programowaniu.</p>
-            <div class="quote__box"></div>
-            <p class="quote__name">Joyce Wheeler</p>
+			<?php
+			if(isSet($_SESSION['username'])){ ?>
+            <form class="message" action="backendScripts/addComment.php" method="POST">
+                <img src="../assets/icons/user.svg" class="message__image">
+                <textarea class="message__text" name="komentarz" contenteditable="true" placeholder="Napisz co chcesz..."></textarea>
+                <button type="submit" class="message__button"><img src="../assets/icons/send.svg" class="message__icon"></button>
+            </form>
+			<?php } ?>
         </section>
     </main>
     <footer class="footer">
@@ -84,5 +91,6 @@
         </div>
         <p class="footer__privacy">&copy; 2020 — 2022 Privacy — Terms</p>
     </footer>
+    <script src="../js/disable_button.js"></script>
 </body>
 </html>

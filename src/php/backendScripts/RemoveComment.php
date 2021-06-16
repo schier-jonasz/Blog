@@ -9,7 +9,7 @@
 		fclose($saveTmp);
 	}
 	
-		$path = "comments/";
+		$path = "../comments/";
 		$path .= $_SESSION['save_title'];
 		$path = trim($path);
 		$path .= ".txt";
@@ -27,7 +27,7 @@
 			}
 			if($line != "usernamestart.\n" && $showUsername){	
 				$checkNick = str_replace(array("\n", "\r"), '', $line);
-				if($checkNick == $_SESSION['usernick']){
+				if($checkNick == $_SESSION['username']){
 					$showThisComment = true;
 				}
 			}
@@ -71,6 +71,6 @@
 			fclose($rewriteData);
 			unlink("savedata.txt");
 		}
-		header("Location: ReadPosts.php");
+		header("Location: ../post.php");
 			
 ?>
