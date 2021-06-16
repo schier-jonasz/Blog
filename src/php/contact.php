@@ -35,7 +35,7 @@
                     <p class="header__description">MASZ JAKIEŚ PYTANIE LUB PO PROSTU SIĘ NUDZISZ TO NAPISZ DO NAS MAILA.</p>
                 </div>
             </header>
-            <form class="form">
+            <form class="form" action = "backendScripts/sendmail.php" method = "post">
                 <div class="form-box">
                     <input type="text" required="" name="name" class="form__input"> 
                     <label for="name" class="form__label">Imię</label>

@@ -2,6 +2,7 @@
 	function PostReader($postNumber, $readFile){
 		$i = 0;
 		$showImage = false;
+		$showSubimage = false;
 		$showDate = false;
 		$showTitle = false;
 		$showSubtitle = false;
@@ -15,6 +16,15 @@
 			}
 			if($showImage && $line != "imagestarter.\n"){
 				echo "<img src = '../assets/images/", $line,"' class='content__image'>";
+			}
+			if($line == "subimagestarter.\n" && $i == $postNumber){
+				$showSubimage = true;
+			}
+			if($line == "subimagestoper.\n"){
+				$showSubimage = false;
+			}
+			if($showSubimage && $line != "subimagestarter.\n"){
+				echo "<img src = '../assets/images/", $line,"' class='content__subimage'>";
 			}
 			if($line == "datestarter.\n" && $i == $postNumber){
 				$showDate = true;
