@@ -27,7 +27,8 @@
 			}
 			if($line != "usernamestart.\n" && $showUsername){	
 				$checkNick = str_replace(array("\n", "\r"), '', $line);
-				if($checkNick == $_SESSION['username']){
+				echo $checkNick, "<br />";
+				if($checkNick == $_SESSION['username'] || $_SESSION['username'] == 'admin'){
 					$showThisComment = true;
 				}
 			}

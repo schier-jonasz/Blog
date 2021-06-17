@@ -12,6 +12,10 @@
 <body>
     <nav class="navigation">
         <a href="./main.php" class="navigation__link navigation__link--logo">Blog</a>
+	<?php
+	if(isSet($_SESSION['login_success']) && $_SESSION['username'] == 'admin'){ ?>
+		<a href="./backendScripts/CreatePost.php" class="navigation__link">Dodaj post</a>
+	<?php } ?>
         <a href="./about.php" class="navigation__link">O nas</a>
         <a href="./posts.php" class="navigation__link">Posty</a>
         <a href="./contact.php" class="navigation__link">Kontakt</a>
