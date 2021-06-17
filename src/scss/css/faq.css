@@ -211,6 +211,7 @@ html {
   margin: 0 0 16px 0;
   color: #525252;
   font-weight: 300;
+  line-height: 22px;
 }
 .question-container--open {
   max-height: 1000px;

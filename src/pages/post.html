@@ -42,6 +42,9 @@
                 <h3 class="box__information">komentarze</h3>
             </div>
             <article class="comment">
+                <form class="delete-comment" method="POST" action="">
+                    <button type="submit" class="delete-comment__submit"><img src="/src/assets/icons/cancel.svg" class="delete-comment__icon"></button>
+                </form>
                 <img src="/src/assets/icons/user.svg" class="comment__image">
                 <div class="information">
                     <p class="information__nickname">Nick</p>
@@ -52,6 +55,9 @@
             </article>
 
             <article class="comment">
+                <form class="delete-comment" method="POST" action="">
+                    <button type="submit" class="delete-comment__submit"><img src="/src/assets/icons/cancel.svg" class="delete-comment__icon"></button>
+                </form>
                 <img src="/src/assets/icons/user.svg" class="comment__image">
                 <div class="information">
                     <p class="information__nickname">Nick</p>
@@ -90,5 +96,6 @@
         <p class="footer__privacy">&copy; 2020 — 2022 Privacy — Terms</p>
     </footer>
     <script src="/src/js/disable_button.js"></script>
+    <script src="/src/js/confirm.js"></script>
 </body>
 </html>

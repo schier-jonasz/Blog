@@ -264,6 +264,35 @@ html {
   line-height: 22px;
 }
 
+.delete-comment {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 5;
+}
+.delete-comment__submit {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: inherit;
+  outline: none;
+}
+.delete-comment__submit:hover {
+  cursor: pointer;
+}
+.delete-comment__submit:hover .delete-comment__icon {
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+.delete-comment__submit:active .delete-comment__icon {
+  transition: all 0.3s ease;
+  transform: scale(1.2);
+}
+.delete-comment__icon {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
 .information {
   display: flex;
   align-items: center;
@@ -271,7 +300,7 @@ html {
 }
 .information__nickname {
   margin-right: 12px;
-  color: #E54651;
+  color: #C58FEE;
   text-transform: capitalize;
 }
 .information__date {
