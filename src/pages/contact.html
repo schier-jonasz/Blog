@@ -24,7 +24,7 @@
                     <p class="header__description">MASZ JAKIEŚ PYTANIE LUB PO PROSTU SIĘ NUDZISZ TO NAPISZ DO NAS MAILA.</p>
                 </div>
             </header>
-            <form class="form">
+            <form class="form" action="https://formspree.io/f/mdoyzwqo" method="POST" id="my-form">
                 <div class="form-box">
                     <input type="text" required="" name="name" class="form__input"> 
                     <label for="name" class="form__label">Imię</label>
@@ -38,8 +38,10 @@
                     <label for="message" class="form__label">Wiadomość</label>
                 </div>
                 <button type="submit" class="form__button">wyślij</button>
+                <div class="status"></div>
             </form>
         </section>
+        
     </main>
 
     <footer class="footer">
@@ -63,4 +65,5 @@
         </div>
         <p class="footer__privacy">&copy; 2020 — 2022 Privacy — Terms</p>
     </footer>
+    <script src="/src/js/contact-form.js"></script>
 </body>

@@ -79,7 +79,7 @@
     align-items: center;
     position: relative;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    height: 60%;
+    height: 63%;
 
     &-box {
         position: relative;
@@ -172,4 +172,42 @@
     }
 
     background-color: #fff;
+}
+
+.status {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding: 2px 0;
+    font-weight: bold;
+}
+
+.error {
+    background-color: $red;
+    color: #80373c;
+    animation: show-hide 3s ease forwards;
+}
+
+.success {
+    background-color: #46e55b;
+    color: #37633d;
+    animation: show-hide 4s ease forwards;
+}
+
+@keyframes show-hide {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    90% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
 }
