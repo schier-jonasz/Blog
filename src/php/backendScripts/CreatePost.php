@@ -28,6 +28,12 @@
 				<input type = "submit" value = "Dodaj"><br />
 				</form>
 				
+				<form action = "addSubimage.php" method = "post" enctype='multipart/form-data'>
+				Dodaj obrazek <br />
+				<input type = "file" name = "userSubimage"><br />
+				<input type = "submit" name = "sendSubimage" value = "wybierz"><br />
+				</form>
+				
 				<form action = "addText.php" method = "post">
 				Dodaj treść posta<br />
 				<input type = "textarea" name = "tresc"><br />
