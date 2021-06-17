@@ -39,16 +39,19 @@
 					$showComment = false;
 					$showThisComment = false;
 					$i++;
+					continue;
 				}
 				if($line != "commentstart.\n" && $showComment){
 					if(isSet($_POST[$i])){
 						if(file_exists("tmp.txt")){
 							unlink("tmp.txt");
-							$showThisComment = false;
-							$showComment = false;
-							$i++;
 							continue;
 						}
+					}
+					else{
+						$showComment = false;
+						$showThisComment = false;
+						$i++;
 					}
 				}
 			}

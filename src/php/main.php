@@ -13,6 +13,11 @@
 <body>
     <nav class="navigation">
         <a href="./main.php" class="navigation__link navigation__link--logo">Blog</a>
+	<?php
+		if(isSet($_SESSION['login_success']) && $_SESSION['username'] == 'admin'){
+			echo '<a href="backendScripts/CreatePost.php" class="navigation__link">Dodaj post</a>';
+		}
+	?>
         <a href="./about.php" class="navigation__link">O nas</a>
         <a href="./posts.php" class="navigation__link">Posty</a>
         <a href="./contact.php" class="navigation__link">Kontakt</a>
@@ -41,9 +46,7 @@
             <p class="latest-posts__description">"Pod pewnymi względami programowanie jest jak malowanie. Zaczynasz z pustym płótnem i pewnymi podstawowymi surowcami. Używasz kombinacji nauki, sztuki i rzemiosła, aby określić, co z nimi zrobić. " - Andrew Hunt</p>
             <div class="posts">
 			<?php
-				$getTitles = fopen("backendScripts/posty.txt", "r");
-				ShowRecentPosts($getTitles);
-				fclose($getTitles);
+				ShowRecentPosts();
 			?>
             </div>
         </section>

@@ -289,10 +289,10 @@
 				if(isSet($_SESSION['username'])){
 					$line = str_replace(array("\n", "\r"), '', $line);
 					//preg_replace('/\s+/', '', $line);
-					if($line == $_SESSION['username']){
-						echo "<form action = 'backendScripts/RemoveComment.php' method = 'post'>";
-						echo "<input type = 'submit' value = 'X' name = ",$i," >";
-						echo "</form>";
+					if($line == $_SESSION['username'] || $_SESSION['username'] == 'admin'){
+						echo '<form class="delete-comment" action = "backendScripts/RemoveComment.php" method = "post">';
+						echo '<button type = "submit" class="delete-comment__submit" name = "',$i,'" ><img src="../assets/icons/cancel.svg" class="delete-comment__icon"></button>';
+						echo '</form>';
 						$i++;
 					}
 				}
@@ -324,23 +324,26 @@
 		fclose($readComments);
 	}
 	
-	function ShowRecentPosts($readTitle){
+	function ShowRecentPosts(){
 		$showTitle = false;
-		$showDate = false;
+		$showImage = false;
+		$getDates = GetDatesForRecentPosts();
 		$i = 0;
+		$readTitle = fopen("backendScripts/posty.txt", "r");
 		while(($line = fgets($readTitle)) !== false && $i < 3){
-			if($line == "datestarter.\n"){
-				$showDate = true;
+			if($line == "imagestarter.\n"){
+				$showImage = true;
 				echo '<article class="post">';
-				echo '<div class="post-overhead">';
+				$words = preg_split('/[\s]+/', $getDates[$i], -1, PREG_SPLIT_NO_EMPTY);
+				echo '<p class="post__date">' , PolishMonth($words[0]), " ", $words[1],", ", $words[2], '</p>';
+				echo '<div class = "post-wrapper-image">';
 			}
-			if($line == "datestoper.\n"){
-				$showDate = false;
+			if($line == "imagestoper.\n"){
+				$showImage = false;
+			}
+			if($showImage && $line != "imagestarter.\n"){
+				echo "<img src = '../assets/images/", $line,"' class='post__image'>";
 				echo '</div>';
-			}
-			if($showDate && $line != "datestarter.\n"){
-				$words = preg_split('/[\s]+/', $line, -1, PREG_SPLIT_NO_EMPTY);
-				echo '<p class="post-overhead__date">' , PolishMonth($words[0]), " ", $words[1],", ", $words[2], '</p>';
 			}
 			if($line == "titlestarter.\n"){
 				$showTitle = true;
@@ -351,11 +354,33 @@
 			}
 			if($showTitle && $line != "titlestarter.\n"){
 				echo '<h3 class="post-bottom__title">', $line, '</h3>';
-				echo '<a href="post.php?id=',$i,'" class="post-bottom__link">Czytaj więcej></a>';
+				echo '<a href="post.php?id=',$i,'" class="post-bottom__link">Czytaj więcej</a>';
 				echo '</div>';
 				echo '</article>';
 				$i++;
 			}
 		}
+		fclose($readTitle);
+	}
+	
+	function GetDatesForRecentPosts(){
+		$showDate = false;
+		$j = 0;
+		$dateArray = [];
+		$readDates = fopen("backendScripts/posty.txt", "r");
+		while(($line = fgets($readDates)) !== false && $j < 3){
+			if($line == "datestarter.\n"){
+				$showDate = true;
+			}
+			if($line == "datestoper.\n"){
+				$showDate = false;
+			}
+			if($showDate && $line != "datestarter.\n"){
+				$dateArray[$j] = $line;
+				$j++;
+			}
+		}
+		fclose($readDates);
+		return $dateArray;
 	}
 ?>

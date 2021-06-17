@@ -31,7 +31,7 @@
     <main class="main">
         <section class="content">
 		<?php
-		if($_GET['id'] != ""){
+		if(isSet($_GET['id']) && $_GET['id'] != ""){
 			$_SESSION['save_id'] = $_GET['id'];
 			$postNumber = $_GET['id'];
 		}
@@ -92,5 +92,6 @@
         <p class="footer__privacy">&copy; 2020 — 2022 Privacy — Terms</p>
     </footer>
     <script src="../js/disable_button.js"></script>
+	<script src="../js/confirm.js"></script>
 </body>
 </html>
