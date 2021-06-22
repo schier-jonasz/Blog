@@ -12,6 +12,8 @@ Tematem naszego projektu jest blog o tematyce informatycznej.
 -  [SCSS](https://sass-lang.com/) 
 -  [MySQL](https://dev.mysql.com/doc/)
 -  [Serwer Apache](https://httpd.apache.org/) 
+-  [Git](https://git-scm.com/)
+
 ### 4. Funkcjonalności
 
 
