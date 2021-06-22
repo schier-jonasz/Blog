@@ -20,6 +20,13 @@ Tematem naszego projektu jest blog o tematyce informatycznej.
 ### 5.  Zrzuty ekranu strony, przedstawiający jej wygląd i układ
 
 
+![obraz](https://user-images.githubusercontent.com/74760639/122996588-542c7480-d3ab-11eb-8ab8-34737966092f.png)
+
+![obraz](https://user-images.githubusercontent.com/74760639/122996485-35c67900-d3ab-11eb-90ff-9be1328d9bbd.png)
+
+![obraz](https://user-images.githubusercontent.com/74760639/122996441-29dab700-d3ab-11eb-96df-3b1a2e78f26d.png)
+
+
 - baza danych
 
 
