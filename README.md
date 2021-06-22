@@ -26,6 +26,7 @@ Tematem naszego projektu jest blog o tematyce informatycznej.
 
 ![obraz](https://user-images.githubusercontent.com/74760639/122996441-29dab700-d3ab-11eb-96df-3b1a2e78f26d.png)
 
+![obraz](https://user-images.githubusercontent.com/74760639/122996850-a1104b00-d3ab-11eb-95bf-c23fa2c2b328.png)
 
 - baza danych
 
