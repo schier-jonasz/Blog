@@ -16,6 +16,18 @@ Tematem naszego projektu jest blog o tematyce informatycznej.
 
 ### 4. Funkcjonalności
 
+- Tworzenie konta dla użytkownika
+- Tworzenie konta dla administratora
+- Logowanie Użytkownika
+- Dodawanie postów z poziomu konta administratora
+- Dodawanie i usuwanie komentarzy
+- Usuwanie komentarzy z poziomu konta administratora
+- Wyświetlanie trzech ostatnich postów na stronie głównej
+- Podstrona zawierająca wszystkie posty z wyszczególnionym ostatnim
+- Podstrona o autorach projektu
+- Podstrona Kontakt, z możlwością zadania pytania do autorów
+- Podstrona Frequently Asked Questions(FAQ)
+- Stopka wraz z linkami do Social Mediów
 
 ### 5.  Zrzuty ekranu strony, przedstawiający jej wygląd i układ
 
