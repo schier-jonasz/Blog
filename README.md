@@ -31,6 +31,9 @@ Tematem naszego projektu jest blog o tematyce informatycznej.
 
 ### 5.  Zrzuty ekranu strony, przedstawiający jej wygląd i układ
 
+- strona główna
+
+![obraz](https://user-images.githubusercontent.com/74760639/122997100-efbde500-d3ab-11eb-8164-6ca155ad1a22.png)
 
 ![obraz](https://user-images.githubusercontent.com/74760639/122996588-542c7480-d3ab-11eb-8ab8-34737966092f.png)
 
@@ -39,8 +42,6 @@ Tematem naszego projektu jest blog o tematyce informatycznej.
 ![obraz](https://user-images.githubusercontent.com/74760639/122996441-29dab700-d3ab-11eb-96df-3b1a2e78f26d.png)
 
 ![obraz](https://user-images.githubusercontent.com/74760639/122996850-a1104b00-d3ab-11eb-95bf-c23fa2c2b328.png)
-
-![obraz](https://user-images.githubusercontent.com/74760639/122997100-efbde500-d3ab-11eb-8164-6ca155ad1a22.png)
 
 ![obraz](https://user-images.githubusercontent.com/74760639/122997568-6fe44a80-d3ac-11eb-9687-a2ccb8062eb4.png)
 
